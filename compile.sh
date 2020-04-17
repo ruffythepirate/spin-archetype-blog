@@ -1,7 +1,9 @@
-cd /input
-export SOURCE_ROOT=/input
-# export SOURCE_PATH
+cd /source
+export DEFAULT_TEMPLATES_PATH=/spin/templates
+export OVERRIDE_TEMPLATES_PATH=/override/templates
+export SOURCE_ROOT=/source
 export TARGET_ROOT=/target
+
 for file in *.md
 do
   export FILE_PATH=$file
