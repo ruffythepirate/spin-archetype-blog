@@ -1,0 +1,66 @@
+body {
+  width: 100%;
+  color: #A9B7C6;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: #3A3C3B;
+  font-family: "Source Code Pro", Consolas, "Lucida Console";
+}
+
+header {
+  background-color:#2b2b2b;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.blog-teaser::after {
+  border: 1px solid;
+  width: 100%;
+  margin-top: 40px;
+  content: '';
+  display: inline-block;
+}
+
+a {
+  color: #E8BF6A;
+}
+
+.blog-teaser-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 30px;
+  font-size: 2em;
+}
+.full-width {
+width: 100%;}
+.date {
+  font-size: 32px;
+}
+
+.logo {
+  font-family: "Source Code Pro";
+  font-size: 36px;
+  padding: 20px;
+  padding-left: 50px;
+  align-self: center;
+  color: #CC7832;
+}
+
+.main-title {
+  font-size: 2.5em;
+}
+
+.main-container {
+  font-family: "Century Schoolbook";
+  max-width: 800px;
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
