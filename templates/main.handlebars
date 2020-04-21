@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
 <head>
   <title>{{title}}</title>
-  <link rel="stylesheet" href="./blog.css">
+  {{#each imports}}
+    {{{this}}}
+  {{/each}}
 </head>
 <body>
   <header>

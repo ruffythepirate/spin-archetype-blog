@@ -14,6 +14,10 @@ ls *.md | extract-metadata.js | \
   map-inline.js -p title 'cat ${.filename} | extract-title.js' | \
   map-inline.js -p ingress 'cat ${.filename} | extract-ingress.js' | \
   jqwrap.js blogTeasers | \
-  handlebars.js --inline true index | handlebars.js main
+  jqassign.js -p imports 'basename -a $current_path/css/*.css | sed "s/^/\/css\//" | create-link-tag.js | wrap-array.js' #| \ 
+  #handlebars.js --inline true index  | \
+  #handlebars.js main
+
+
 
 
