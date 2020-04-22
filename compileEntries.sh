@@ -1,15 +1,20 @@
-cd /source
 export DEFAULT_TEMPLATES_PATH=/spin/templates
 export OVERRIDE_TEMPLATES_PATH=/override/templates
 export SOURCE_ROOT=/source
 export TARGET_ROOT=/target
 
+cd /source
+echo Files to compile
+ls *.md
 for file in *.md
 do
   export FILE_PATH=$file
   echo Compiling $file
-  CONTENT=$(cat $file | markdown.js | jqwrap.js content)
-  META=$(echo $file | extract-metadata.js | jqwrap.js meta)
-  echo -e "$CONTENT \n $META" | jqmerge.js | handlebars.js --inline true content | handlebars.js main \
+  echo "{}" | \
+    jqassign.js -p content "cat $file | markdown.js" \
+    | jqassign.js -p meta "echo $file | extract-metadata.js" \
+    | jqassign.js -p title "echo $file | extract-title.js" \
+    | jqassign.js -p imports "basename -a /spin/css/*.css | sed 's/^/\/css\//' | create-link-tag.js | wrap-array.js" \
+    | handlebars.js --inline true content | handlebars.js main \
     | write-to-target.js
 done

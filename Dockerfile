@@ -6,6 +6,6 @@ COPY css /spin/css
 
 COPY *.sh /spin
 WORKDIR /spin
-ENTRYPOINT /spin/compileIndex.sh
+ENTRYPOINT /spin/compile.sh
 
 
