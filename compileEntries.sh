@@ -4,8 +4,6 @@ export SOURCE_ROOT=/source
 export TARGET_ROOT=/target
 
 cd /source
-echo Files to compile
-ls *.md
 for file in *.md
 do
   export FILE_PATH=$file
@@ -16,5 +14,5 @@ do
     | jqassign.js -p title "echo $file | extract-title.js" \
     | jqassign.js -p imports "basename -a /spin/css/*.css | sed 's/^/\/css\//' | create-link-tag.js | wrap-array.js" \
     | handlebars.js --inline true content | handlebars.js main \
-    | write-to-target.js
+    | write-entry-html.js
 done
