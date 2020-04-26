@@ -19,7 +19,7 @@ echo Creating index file...
 
 ls *.md | extract-metadata.js \
   | jqsort.js filename \
-  | jqtake.js 10 \
+  | jqtake.js 25 \
   | map-inline.js -p title 'cat ${.filename} | extract-title.js' \
   | map-inline.js -p ingress 'cat ${.filename} | extract-ingress.js' \
   | jqwrap.js blogTeasers \
