@@ -4,11 +4,23 @@
   {{#each imports}}
     {{{this}}}
   {{/each}}
+  <script type="text/javascript">
+    function search() {
+      let searchText = document.getElementById('search-box').value;
+      let url = `http://www.google.com/search?q=site%3adev-blog.net ${encodeURIComponent(searchText)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="/">blog</a></div>
+      <a href="/">blog</a>
+      
+    </div>
+    <div class="search-container"/>
+     <input id="search-box" type="text" onkeydown="if (event.keyCode === 13) search();" placeholder="Search..."/>
+    </div>
   </header>
   <div class="main-container">
     {{{content}}}

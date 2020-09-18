@@ -4,7 +4,7 @@
   {{{this.ingress}}}
   <div class="full-width blog-teaser-actions">
     <a href='{{this.path}}/' class="">Read More</a>
-    <div class="">{{this.createdDate}}</div>
+    <div class="">{{dateFormat this.createdAt "ll"}}</div>
   </div>
 </div>
 {{/each}}

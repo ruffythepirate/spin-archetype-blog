@@ -15,8 +15,17 @@ header {
   right: 0;
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
+}
+
+.search-container {
+  padding-right: 40px;
+  display: flex;
+}
+
+.search-container input {
+  align-self: center;
 }
 
 .blog-teaser::after {
